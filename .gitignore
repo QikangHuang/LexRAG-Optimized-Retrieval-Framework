@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.vscode/
+log
+data/retrieval/
+data/law_library/
+*.npy
+*.faiss
+*.pkl

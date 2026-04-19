@@ -1,0 +1,31 @@
+# Python版本要求: Python >= 3.8, < 3.12
+# 推荐版本: Python 3.9 或 3.10 (最佳兼容性和稳定性)
+
+# 基础依赖
+numpy>=1.21.0
+tqdm>=4.62.0
+
+# 检索相关
+faiss-gpu>=1.7.4  # 如果有GPU，可以使用 faiss-gpu
+sentence-transformers>=2.2.0
+modelscope>=1.9.0
+pyserini>=0.21.0
+bm25s>=0.1.0
+langid>=1.1.6
+FlagEmbedding
+
+# LLM相关
+openai>=1.0.0
+zhipuai>=2.0.0
+transformers>=4.30.0
+torch>=1.13.0  # 根据CUDA版本选择，CPU版本: torch==2.0.0+cpu
+
+# 评估相关
+rouge-score>=0.1.2
+nltk>=3.8.0
+bert-score>=0.3.13
+jieba>=0.42.1
+
+# 其他工具
+httpx>=0.24.0
+

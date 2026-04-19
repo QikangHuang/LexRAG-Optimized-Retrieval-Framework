@@ -3,7 +3,7 @@ import json
 import logging
 from typing import Dict, List
 from .metrics import UnifiedEvaluator
-from generate.data_processor import DataProcessor
+from ..generate.data_processor import DataProcessor
 from .retrieval_metrics import RetrievalMetrics
 
 logging.basicConfig(

@@ -1,13 +1,13 @@
-from utils.utils import create_generator, create_processor, create_evaluator, create_retriever
-from generate.data_processor import DataProcessor
-from config.config import Config
+from .utils.utils import create_generator, create_processor, create_evaluator, create_retriever
+from .generate.data_processor import DataProcessor
+from .config.config import Config
 import json
 import os
 
 class GeneratorPipeline:
     def __init__(self, model_type=None, config=None, prompt_builder=None):
         self.model_type = model_type
-        from config.config import Config
+        from .config.config import Config
         if isinstance(config, Config):
             self.config = config.config
         elif config:
@@ -16,7 +16,7 @@ class GeneratorPipeline:
             cfg = Config(model_type=model_type)
             self.config = cfg.config
             
-        from generate.prompt_builder import LegalPromptBuilder
+        from .generate.prompt_builder import LegalPromptBuilder
         if prompt_builder:
             self.prompt_builder = prompt_builder
         else:

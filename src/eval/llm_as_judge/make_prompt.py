@@ -1,6 +1,6 @@
 import json
 import os
-from eval.llm_as_judge.use_template import use_judge_template
+from .use_template import use_judge_template
 
 #data_path: original data path
 #gen_path: (llm model)generated response path

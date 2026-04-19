@@ -25,17 +25,22 @@ class Config:
         },
         "qwen": {
             "model_type": "qwen",
-            "model_name": "qwen2.5-72b-instruct",
-            "api_base": "",
+            "model_name": "qwen-long-latest",
+            "api_base": "https://dashscope.aliyuncs.com/compatible-mode/v1",
             "api_key": "",
             "max_retries": 10,
             "max_parallel": 32
         }
     }
 
-    def __init__(self, model_type=None, my_config=None):
-        if my_config:
-            self.config = my_config
+    def __init__(self, model_type=None, my_config=None, config_dict=None):
+        if my_config is not None and config_dict is not None:
+            raise ValueError("Provide only one of my_config or config_dict")
+
+        config = my_config if my_config is not None else config_dict
+
+        if config is not None:
+            self.config = config
         elif model_type:
             self.config = self._default_configs.get(model_type)
             if not self.config:
